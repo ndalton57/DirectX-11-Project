@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Camera.cpp" />
+    <ClCompile Include="Source\DDSTextureLoader.cpp" />
+    <ClCompile Include="Source\Game.cpp" />
+    <ClCompile Include="Source\main.cpp" />
+    <ClCompile Include="Source\RenderContext.cpp" />
+    <ClCompile Include="Source\Renderer.cpp" />
+    <ClCompile Include="Source\RenderNode.cpp" />
+    <ClCompile Include="Source\RenderObject.cpp" />
+    <ClCompile Include="Source\Time.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\Camera.h" />
+    <ClInclude Include="Source\DDSTextureLoader.h" />
+    <ClInclude Include="Source\Game.h" />
+    <ClInclude Include="Source\Lights.h" />
+    <ClInclude Include="Source\RenderContext.h" />
+    <ClInclude Include="Source\Renderer.h" />
+    <ClInclude Include="Source\RenderNode.h" />
+    <ClInclude Include="Source\RenderObject.h" />
+    <ClInclude Include="Source\Shader.h" />
+    <ClInclude Include="Source\stdafx.h" />
+    <ClInclude Include="Source\Time.h" />
+    <ClInclude Include="Source\Vertex.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Source\DX11Helpers.inl" />
+    <None Include="Source\MathWrapper.inl" />
+    <None Include="Source\Shaders\Lighting.hlsli" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Source\Shaders\ScreenPS.hlsl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">rmdir "$(ProjectDir)/Source/Shaders/Compiled Shaders/%(Filename)/$(Configuration)" /Q /S
+md "$(ProjectDir)/Source/Shaders/Compiled Shaders/%(Filename)/$(Configuration)"
+"$(ProjectDir)Source\Compile.exe" +Mode $(Configuration) +ShaderModel ps_5_0 +EntryPoint main +FilePath Source/Shaders/%(Filename)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">rmdir "$(ProjectDir)/Source/Shaders/Compiled Shaders/%(Filename)/$(Configuration)" /Q /S
+md "$(ProjectDir)/Source/Shaders/Compiled Shaders/%(Filename)/$(Configuration)"
+"$(ProjectDir)Source\Compile.exe" +Mode $(Configuration) +ShaderModel ps_5_0 +EntryPoint main +FilePath Source/Shaders/%(Filename)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">rmdir "$(ProjectDir)/Source/Shaders/Compiled Shaders/%(Filename)/$(Configuration)" /Q /S
+md "$(ProjectDir)/Source/Shaders/Compiled Shaders/%(Filename)/$(Configuration)"
+"$(ProjectDir)Source\Compile.exe" +Mode $(Configuration) +ShaderModel ps_5_0 +EntryPoint main +FilePath Source/Shaders/%(Filename)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">rmdir "$(ProjectDir)/Source/Shaders/Compiled Shaders/%(Filename)/$(Configuration)" /Q /S
+md "$(ProjectDir)/Source/Shaders/Compiled Shaders/%(Filename)/$(Configuration)"
+"$(ProjectDir)Source\Compile.exe" +Mode $(Configuration) +ShaderModel ps_5_0 +EntryPoint main +FilePath Source/Shaders/%(Filename)</Command>
+    </CustomBuild>
+    <CustomBuild Include="Source\Shaders\ScreenVS.hlsl">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="Source\Shaders\SkyboxPS.hlsl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">rmdir "$(ProjectDir)/Source/Shaders/Compiled Shaders/%(Filename)/$(Configuration)" /Q /S
+md "$(ProjectDir)/Source/Shaders/Compiled Shaders/%(Filename)/$(Configuration)"
+"$(ProjectDir)Source\Compile.exe" +Mode $(Configuration) +ShaderModel ps_5_0 +EntryPoint main +FilePath Source/Shaders/%(Filename)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">rmdir "$(ProjectDir)/Source/Shaders/Compiled Shaders/%(Filename)/$(Configuration)" /Q /S
+md "$(ProjectDir)/Source/Shaders/Compiled Shaders/%(Filename)/$(Configuration)"
+"$(ProjectDir)Source\Compile.exe" +Mode $(Configuration) +ShaderModel ps_5_0 +EntryPoint main +FilePath Source/Shaders/%(Filename)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">rmdir "$(ProjectDir)/Source/Shaders/Compiled Shaders/%(Filename)/$(Configuration)" /Q /S
+md "$(ProjectDir)/Source/Shaders/Compiled Shaders/%(Filename)/$(Configuration)"
+"$(ProjectDir)Source\Compile.exe" +Mode $(Configuration) +ShaderModel ps_5_0 +EntryPoint main +FilePath Source/Shaders/%(Filename)</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">rmdir "$(ProjectDir)/Source/Shaders/Compiled Shaders/%(Filename)/$(Configuration)" /Q /S
+md "$(ProjectDir)/Source/Shaders/Compiled Shaders/%(Filename)/$(Configuration)"
+"$(ProjectDir)Source\Compile.exe" +Mode $(Configuration) +ShaderModel ps_5_0 +EntryPoint main +FilePath Source/Shaders/%(Filename)</Command>
+    </CustomBuild>
+    <CustomBuild Include="Source\Shaders\SkyboxVS.hlsl">
+      <FileType>Document</FileType>
+    </CustomBuild>
+    <CustomBuild Include="Source\Shaders\StandardPS.hlsl">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">rmdir "$(ProjectDir)/Source/Shaders/Compiled Shaders/%(Filename)/$(Configuration)" /Q /S
+md "$(ProjectDir)/Source/Shaders/Compiled Shaders/%(Filename)/$(Configuration)"
+"$(ProjectDir)Source\Compile.exe" +Mode $(Configuration) +ShaderModel ps_5_0 +EntryPoint main +FilePath Source/Shaders/%(Filename) +Var NUM_LIGHTS 25 +Var OPENGL 1</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">rmdir "$(ProjectDir)/Source/Shaders/Compiled Shaders/%(Filename)/$(Configuration)" /Q /S
+md "$(ProjectDir)/Source/Shaders/Compiled Shaders/%(Filename)/$(Configuration)"
+"$(ProjectDir)Source\Compile.exe" +Mode $(Configuration) +ShaderModel ps_5_0 +EntryPoint main +FilePath Source/Shaders/%(Filename) +Var NUM_LIGHTS 25 +Var OPENGL 1</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">rmdir "$(ProjectDir)/Source/Shaders/Compiled Shaders/%(Filename)/$(Configuration)" /Q /S
+md "$(ProjectDir)/Source/Shaders/Compiled Shaders/%(Filename)/$(Configuration)"
+"$(ProjectDir)Source\Compile.exe" +Mode $(Configuration) +ShaderModel ps_5_0 +EntryPoint main +FilePath Source/Shaders/%(Filename) +Var NUM_LIGHTS 25 +Var OPENGL 1</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">rmdir "$(ProjectDir)/Source/Shaders/Compiled Shaders/%(Filename)/$(Configuration)" /Q /S
+md "$(ProjectDir)/Source/Shaders/Compiled Shaders/%(Filename)/$(Configuration)"
+"$(ProjectDir)Source\Compile.exe" +Mode $(Configuration) +ShaderModel ps_5_0 +EntryPoint main +FilePath Source/Shaders/%(Filename) +Var NUM_LIGHTS 25 +Var OPENGL 1</Command>
+    </CustomBuild>
+    <CustomBuild Include="Source\Shaders\StandardVS.hlsl">
+      <FileType>Document</FileType>
+    </CustomBuild>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{18D62F02-8F31-47E8-A792-D16F244B2BE1}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>DX11Engine</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>Binaries\x86\$(Configuration)\</OutDir>
+    <IntDir>Intermediates\x86\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>Binaries\x64\$(Configuration)\</OutDir>
+    <IntDir>Intermediates\x64\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>Binaries\x86\$(Configuration)\</OutDir>
+    <IntDir>Intermediates\x86\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>Binaries\x64\$(Configuration)\</OutDir>
+    <IntDir>Intermediates\x64\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ForcedIncludeFiles>$(ProjectDir)\Source\stdafx.h</ForcedIncludeFiles>
+      <PrecompiledHeaderFile>$(ProjectDir)\Source\stdafx.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <CustomBuild>
+      <Command>rmdir "$(ProjectDir)/Source/Shaders/Compiled Shaders/%(Filename)/$(Configuration)" /Q /S
+md "$(ProjectDir)/Source/Shaders/Compiled Shaders/%(Filename)/$(Configuration)"
+"$(ProjectDir)Source\Compile.exe" +Mode $(Configuration) +ShaderModel vs_5_0 +EntryPoint main +FilePath Source/Shaders/%(Filename)</Command>
+    </CustomBuild>
+    <CustomBuild>
+      <Message>-- %(Filename) --</Message>
+      <Outputs>$(ProjectDir)/Source/Shaders/Includes/%(Filename).h</Outputs>
+      <AdditionalInputs>$(ProjectDir)/Source/Shaders/%(Filename).hlsl</AdditionalInputs>
+    </CustomBuild>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ForcedIncludeFiles>$(ProjectDir)\Source\stdafx.h</ForcedIncludeFiles>
+      <PrecompiledHeaderFile>$(ProjectDir)\Source\stdafx.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <CustomBuild>
+      <Command>rmdir "$(ProjectDir)/Source/Shaders/Compiled Shaders/%(Filename)/$(Configuration)" /Q /S
+md "$(ProjectDir)/Source/Shaders/Compiled Shaders/%(Filename)/$(Configuration)"
+"$(ProjectDir)Source\Compile.exe" +Mode $(Configuration) +ShaderModel vs_5_0 +EntryPoint main +FilePath Source/Shaders/%(Filename)</Command>
+    </CustomBuild>
+    <CustomBuild>
+      <Message>-- %(Filename) --</Message>
+      <Outputs>$(ProjectDir)/Source/Shaders/Includes/%(Filename).h</Outputs>
+      <AdditionalInputs>$(ProjectDir)/Source/Shaders/%(Filename).hlsl</AdditionalInputs>
+    </CustomBuild>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ForcedIncludeFiles>$(ProjectDir)\Source\stdafx.h</ForcedIncludeFiles>
+      <PrecompiledHeaderFile>$(ProjectDir)\Source\stdafx.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <CustomBuild>
+      <Command>rmdir "$(ProjectDir)/Source/Shaders/Compiled Shaders/%(Filename)/$(Configuration)" /Q /S
+md "$(ProjectDir)/Source/Shaders/Compiled Shaders/%(Filename)/$(Configuration)"
+"$(ProjectDir)Source\Compile.exe" +Mode $(Configuration) +ShaderModel vs_5_0 +EntryPoint main +FilePath Source/Shaders/%(Filename)</Command>
+    </CustomBuild>
+    <CustomBuild>
+      <Message>-- %(Filename) --</Message>
+      <Outputs>$(ProjectDir)/Source/Shaders/Includes/%(Filename).h</Outputs>
+      <AdditionalInputs>$(ProjectDir)/Source/Shaders/%(Filename).hlsl</AdditionalInputs>
+    </CustomBuild>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ForcedIncludeFiles>$(ProjectDir)\Source\stdafx.h</ForcedIncludeFiles>
+      <PrecompiledHeaderFile>$(ProjectDir)\Source\stdafx.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <CustomBuild>
+      <Command>rmdir "$(ProjectDir)/Source/Shaders/Compiled Shaders/%(Filename)/$(Configuration)" /Q /S
+md "$(ProjectDir)/Source/Shaders/Compiled Shaders/%(Filename)/$(Configuration)"
+"$(ProjectDir)Source\Compile.exe" +Mode $(Configuration) +ShaderModel vs_5_0 +EntryPoint main +FilePath Source/Shaders/%(Filename)</Command>
+    </CustomBuild>
+    <CustomBuild>
+      <Message>-- %(Filename) --</Message>
+      <Outputs>$(ProjectDir)/Source/Shaders/Includes/%(Filename).h</Outputs>
+      <AdditionalInputs>$(ProjectDir)/Source/Shaders/%(Filename).hlsl</AdditionalInputs>
+    </CustomBuild>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

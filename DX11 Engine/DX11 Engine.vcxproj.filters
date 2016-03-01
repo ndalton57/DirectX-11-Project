@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Shaders">
+      <UniqueIdentifier>{4d9b818f-68cd-45ac-b58a-9f56ef52ad26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shaders\Pixel Shaders">
+      <UniqueIdentifier>{47537c34-ca8e-4a8e-991d-26a585b039f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shaders\Vertex Shaders">
+      <UniqueIdentifier>{b3233f67-7918-4670-8daf-840237ed958d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Shaders\Headers">
+      <UniqueIdentifier>{20d13260-b990-4c10-8e6e-65c9ae2499fa}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Camera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\DDSTextureLoader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\RenderContext.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\RenderNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\RenderObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Time.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\Camera.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\DDSTextureLoader.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Game.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Lights.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\RenderContext.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Renderer.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\RenderNode.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\RenderObject.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Shader.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\stdafx.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Time.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vertex.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Source\DX11Helpers.inl">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="Source\MathWrapper.inl">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="Source\Shaders\Lighting.hlsli">
+      <Filter>Source Files\Shaders\Headers</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Source\Shaders\StandardPS.hlsl">
+      <Filter>Source Files\Shaders\Pixel Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Source\Shaders\ScreenPS.hlsl">
+      <Filter>Source Files\Shaders\Pixel Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Source\Shaders\ScreenVS.hlsl">
+      <Filter>Source Files\Shaders\Vertex Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Source\Shaders\SkyboxVS.hlsl">
+      <Filter>Source Files\Shaders\Vertex Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Source\Shaders\StandardVS.hlsl">
+      <Filter>Source Files\Shaders\Vertex Shaders</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Source\Shaders\SkyboxPS.hlsl">
+      <Filter>Source Files\Shaders\Pixel Shaders</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>
