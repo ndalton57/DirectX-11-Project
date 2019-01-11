@@ -302,7 +302,7 @@ Renderer::Renderer()
 
 
 	// Post Process Quad Initialization //
-	InitializeScreenQuad();
+	//InitializeScreenQuad();
 }
 
 Renderer::~Renderer()
